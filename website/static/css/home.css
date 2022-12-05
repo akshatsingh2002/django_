@@ -1,0 +1,11 @@
+#carouselExampleCaptions img{
+width:100%;
+height:800px;
+}
+#class1 img{
+    width:500px;
+}
+
+.card {
+    border-radius: .7rem;
+  }
