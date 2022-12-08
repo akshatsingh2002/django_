@@ -4,19 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock title %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="/static/css/index.css" rel="stylesheet">
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
     <header class="p-3 text-bg-dark">
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-  
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="/home" class="nav-link px-2 text-secondary">Home</a></li>
             <li class="nav-item dropdown">
@@ -32,7 +28,7 @@
             </li>
             
             <li><a href="/faq" class="nav-link px-2 text-white">FAQs</a></li>
-            <li><a href="/aboutus" class="nav-link px-2 text-white">About</a></li>
+            <li><a href="/aboutus" class="nav-link px-2 text-white">About US</a></li>
           </ul>
           <div class="text-end">
             {% if user.is_authenticated %}
@@ -52,34 +48,103 @@
     </div>
 
     <div class="container2 d-inline-block">
-      <footer class="py-5">
-        <div class="row">
-          <div class="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" style="color:white">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"style="color:white">Products</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" style="color:white">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" style="color:white">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" style="color:white">About</a></li>
-            </ul>
+      <section
+             class="d-flex justify-content-between p-4"
+             style="background-color: #6351ce"
+             >
+      <!-- Left -->
+      <div class="me-5" style="margin-left:0px;margin-right:0px;">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div class="social-media">
+        <a class="btn btn-primary" style="background-color: #3b5998;" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+>Hel</a>
+      </div>
+      <!-- Right -->
+    </section>
+     <section class="footer_content">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold" style="color:white;">Company name</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p style="color:white;">
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
           </div>
-    
-    
-          <div class="col-md-5 offset-md-1 mb-3">
-            <form>
-              <h5>Subscribe to our newsletter</h5>
-              <p>Monthly digest of what's new and exciting from us.</p>
-              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden">Email address</label>
-                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                <button class="btn btn-primary" type="button">Subscribe</button>
-              </div>
-            </form>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold" style="color:white;">Products</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="/laptop" class="text-white">Gaming Laptops</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Game Consoles</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Gamign Desktop</a>
+            </p>
           </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold" style="color:white;">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="/login" class="text-white">Your Account</a>
+            </p>
+            <p>
+              <a href="/faq" class="text-white">FAQs</a>
+            </p>
+            <p>
+              <a href="/aboutus" class="text-white">About Us</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color:white;text-decoration:none;">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
         </div>
-    
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <!-- Grid row -->
+      </div>
+    </section>
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" style="color:white;">
           <p style="text-align:center;">© 2022 Company, Inc. All rights reserved.</p>
           <ul class="list-unstyled d-flex">
             <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
