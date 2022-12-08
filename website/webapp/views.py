@@ -79,6 +79,7 @@ def laptop(request):
     print(products)
     context = {"products":products}
     return render(request,"laptop.html",context)
+
 def InnerProduct(request,id):
     var = material.objects.all()
     print(var)
