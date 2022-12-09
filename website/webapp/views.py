@@ -75,10 +75,29 @@ def logout_request(request):
 
 
 def laptop(request):
-    products = material.objects.all()
-    print(products)
-    context = {"products":products}
+    
+    products1 = material.objects.filter(category='l')
+    print(products1)
+    context = {"products1":products1}
     return render(request,"laptop.html",context)
+
+def console(request):
+    
+    products2 = material.objects.filter(category='c')
+    print(products2,"this is product 2")
+    context = {"products2":products2}
+    return render(request,"console.html",context)
+
+def desktop(request):
+    
+    products3 = material.objects.filter(category='d')
+    print(products3,"this is product 3")
+    context = {"products3":products3}
+    return render(request,"desktop.html",context)
+
+
+
+
 
 def InnerProduct(request,id):
     var = material.objects.all()

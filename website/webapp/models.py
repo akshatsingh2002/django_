@@ -8,8 +8,13 @@ class query(models.Model):
     email = models.EmailField()
     Msg = models.CharField(max_length=300)
     
+SELECT_CATEGORY = (
+    ('l','laptop'),('c','console'),('d','desktop')
+)
+    
 class material(models.Model):
     name = models.CharField(max_length=100)
     price = models.FloatField()
     desc = models.CharField(max_length=500)
     img = models.ImageField(upload_to="static/images")
+    category = models.CharField(choices=SELECT_CATEGORY,max_length=500)
