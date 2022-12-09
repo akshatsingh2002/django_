@@ -100,12 +100,15 @@ def desktop(request):
 
 
 def InnerProduct(request,id):
+    id = id -4
     var = material.objects.all()
     print(var)
     context = {"var":var[id-1]}
     return render(request,"InnerProduct.html",context)
     
     
+def cart(request):
+    return render(request,"cart.html")
     
     
 
