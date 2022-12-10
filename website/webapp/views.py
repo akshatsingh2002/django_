@@ -150,7 +150,7 @@ def showcart(request):
             }
        
     else:
-        return HttpResponse("your Cart is Empty")
+        return render(request,'emptycart.html')
 
 
     
