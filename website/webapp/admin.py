@@ -9,4 +9,7 @@ class kuchbhi(admin.ModelAdmin):
 @admin.register(material)
 class products(admin.ModelAdmin):
     list_display = ["name","price","desc","img"]
-    
+
+@admin.register(Cart)
+class cart(admin.ModelAdmin):
+    list_display = ['user','product','quantity']

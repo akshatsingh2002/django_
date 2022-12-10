@@ -33,4 +33,5 @@ urlpatterns = [
     path("login/", views.login_request, name="login"),
     path("inner/<int:id>",views.InnerProduct),
     path('cart/',views.cart),
+    path('showcart/',views.showcart)
 ]

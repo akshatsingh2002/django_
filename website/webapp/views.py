@@ -4,7 +4,7 @@ from turtle import home
 from django.shortcuts import render
 from numpy import product
 from requests import request
-from django.shortcuts import  render, redirect
+from django.shortcuts import  render, redirect , HttpResponse
 from .forms import NewUserForm
 from django.contrib.auth import login
 from django.contrib import messages
@@ -12,7 +12,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from .models import  query
-from .models import material
+from .models import *
 
 # Create your views here.
 def home(request):
@@ -107,8 +107,52 @@ def InnerProduct(request,id):
     return render(request,"InnerProduct.html",context)
     
     
+# def cart(request):
+#     return render(request,"cart.html")
+    
 def cart(request):
-    return render(request,"cart.html")
+    if request.method=="POST":
+        user=request.user
+        print(user,"this is the user")
+        product_id=request.POST['product_id']
+        print(product_id,"this is the product id")
+        prod=material.objects.get(id=product_id)
+        cart=Cart(user=user,product=prod)
+        cart.save()
+    return redirect('/showcart')
+
+def showcart(request):
+    user=request.user
+    showcart=Cart.objects.filter(user=user)
+    context={
+        'showcart':showcart
+    }
+
+    amount=0.0
+    total_amount=0.0
+    tax=70.0
     
+    cart_product=[p for p in Cart.objects.all() if p.user==user]
+    if cart_product:
+        for p in cart_product:
+            # print(p.product.price,'ye proce hain')
+            print(p,'ye only p hain')
+            teampamount=p.product.price
+            print('teampamount',teampamount)
+            amount=amount+teampamount
+            print('amount =',amount)
+            total_amount=amount+tax
+            print('This is total amoutn',total_amount)
+            context={
+                'amount':amount,
+                'total_amount':total_amount,
+                'showcart':showcart
+            }
+       
+    else:
+        return HttpResponse("your Cart is Empty")
+
+
     
+    return render(request,'cart.html',context)
 

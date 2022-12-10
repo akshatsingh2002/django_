@@ -19,7 +19,12 @@
                 <div class="price">
                     {{lap.price}}
                 </div>
-                <a class="add-to-cart" href="">ADD TO CART</a>
+                {% comment %} <a class="add-to-cart" href="/cart" name="product_id" value = "{{var.id}}" id="product_id">ADD TO CART</a> {% endcomment %}
+                <form action="/cart/" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value = "{{lap.id}}" id="product_id">
+                    <button class="add-to-cart">Add to cart</button>
+                </form>
             </div>
         </div>
     </div>
